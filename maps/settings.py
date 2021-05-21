@@ -77,8 +77,19 @@ WSGI_APPLICATION = 'maps.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'polluescapedb',
+        'HOST': 'polluescapedbserver.database.windows.net',
+        'PORT': '1433',
+        'USER': 'dbadmin',
+        'PASSWORD': 'PolluEscape$123',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+            'MARS_Connection': 'True',
+        }
+
     }
 }
 
