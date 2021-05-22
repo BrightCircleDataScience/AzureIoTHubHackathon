@@ -12,8 +12,8 @@ with open('current_bluebikes_stations.csv') as csvfile:
     list_json = []
     # the data can be found in the third and fourth column
     for row in reader:
-        lat = float(row[2])
-        lon = float(row[3])
+        lon = float(row[2])
+        lat = float(row[3])
         geoPoint = geojson.Point((lat, lon))
         feature = geojson.Feature(geometry=geoPoint,
                                   properties={
