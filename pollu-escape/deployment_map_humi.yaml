@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: pollu-escape-humi
+  name: pollu-escape-humi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pollu-escape-humi
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: pollu-escape-humi
+    spec:
+      containers:
+      - image: polluescapeazurecontainerregistry.azurecr.io/map-humi:v0.2.3
+        name: map-humi
+        resources: {}
+status: {}

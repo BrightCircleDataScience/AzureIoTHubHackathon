@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: pollu-escape-app
+  name: pollu-escape-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pollu-escape-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: pollu-escape-app
+    spec:
+      containers:
+      - image: polluescapeazurecontainerregistry.azurecr.io/react-app:v0.2.4
+        name: react-app
+        resources: {}
+status: {}

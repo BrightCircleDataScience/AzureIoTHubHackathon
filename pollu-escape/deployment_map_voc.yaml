@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: pollu-escape-voc
+  name: pollu-escape-voc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pollu-escape-voc
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: pollu-escape-voc
+    spec:
+      containers:
+      - image: polluescapeazurecontainerregistry.azurecr.io/map-voc:v0.2.3
+        name: map-voc
+        resources: {}
+status: {}
